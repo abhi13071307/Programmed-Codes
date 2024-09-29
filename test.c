@@ -1,18 +1,20 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-int main()
+#define size 10
+void insq();
+void delq();
+void showq();
+void qrev();
+int qfull();
+int qempty();
+struct Que                                      //Structure Definition
 {
-  clrscr();
-  clock_t t;
-  t = clock();
-  srand(time(NULL));
-  for (int i = 0; i < 100; i++)
-  {
-    printf("%d\n", rand() % 1000);
-  }
-  t = clock() - t;
-  double time_taken = ((double)t) / CLOCKS_PER_SEC;
-  printf(" %f seconds to execute \n", time_taken);
-  return 0;
+    int items[size];
+    int front;
+    int rear;
+};
+struct Que q={.front=-1,.rear=-1};
+struct Que *qtr;
+qtr=q;
+int main(){
+    printf("%d ",q->front);
+    return 0;
 }
